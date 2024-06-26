@@ -1,20 +1,9 @@
-import sys
-from .classmodule import MyClass
-from .funcmodule import my_function
+""" entrypoint script """
+
+from mypycli import cli, __app_name__
 
 def main():
-    print("In main()")
-
-    args = sys.argv[1:]
-    print(f"count of args :: {len(args)}")
-
-    for arg in args:
-        print(f"passed argument :: {arg}")
-
-    my_function("Function import works")
-
-    obj = MyClass("Anirudha")
-    obj.say_thanks()
+    cli.app(prog_name=__app_name__)
 
 if __name__ == "__main__":
     main()
